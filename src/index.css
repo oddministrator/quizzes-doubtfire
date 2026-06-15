@@ -150,28 +150,17 @@ p {
   z-index: 50;
   display: flex;
   align-items: center;
-  gap: 8px;
   text-decoration: none;
-  color: var(--text-secondary);
   transition: all var(--transition-fast);
-  font-weight: 500;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  padding: 8px 16px 8px 12px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--border-light);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .return-link:hover {
-  color: var(--text-primary);
-  transform: translateY(-2px);
-  border-color: var(--accent-primary);
-  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px) scale(1.02);
+  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.3));
 }
 
 .return-logo {
-  height: 24px;
+  height: 48px;
   width: auto;
   object-fit: contain;
 }
