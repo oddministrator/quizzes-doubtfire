@@ -1,50 +1,42 @@
-# React + TypeScript + Vite
+# Quizzes Doubtfire
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, modern Single-Page Application (SPA) designed to deliver interactive multiple-choice quizzes seamlessly to users. Built as a Progressive Web App (PWA) utilizing React, TypeScript, and Vite, the application focuses on high performance, a responsive glassmorphic UI, and an intuitive user experience.
 
-Currently, two official plugins are available:
+## Features
+- **Modern Aesthetics:** Elegant glassmorphism design with smooth animations, dark-mode styling, and rich visual feedback.
+- **PWA Capabilities:** Fully installable on supported devices, providing offline support, fast loading times, and a native-like app experience.
+- **Responsive Design:** Fluid layouts optimized for both mobile and desktop viewing.
+- **Interactive Quizzes:** Dynamic question rendering, immediate feedback, and score tracking across various question sets.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Framework:** [React](https://react.org/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** Vanilla CSS using modern design tokens and variables
 
-## Expanding the ESLint configuration
+## Running Locally
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To get started with development:
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/oddministrator/quizzes-doubtfire.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd quizzes-doubtfire
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### About
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+**Quizzes Doubtfire** was initially conceived, written for, and deployed on [radiological.info](https://radiological.info). It was designed to serve as an interactive and highly engaging learning module natively linked with the broader educational platform.
