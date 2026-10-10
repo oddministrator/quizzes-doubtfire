@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { OPFSService } from '../services/opfs';
 import { QuestionSet } from '../types';
-import { Download, Upload, Play, Trash2, RotateCcw, DownloadCloud } from 'lucide-react';
+import { Download, Upload, Play, Trash2, RotateCcw, DownloadCloud, Edit } from 'lucide-react';
 import './DirectoryScreen.css';
 
 interface Props {
   onSelectSet: (set: QuestionSet) => void;
+  onCreateSet?: () => void;
+  onEditSet?: (set: QuestionSet) => void;
 }
 
-export const DirectoryScreen: React.FC<Props> = ({ onSelectSet }) => {
+export const DirectoryScreen: React.FC<Props> = ({ onSelectSet, onCreateSet, onEditSet }) => {
   const [sets, setSets] = useState<QuestionSet[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -131,6 +133,12 @@ export const DirectoryScreen: React.FC<Props> = ({ onSelectSet }) => {
         >
           <Upload size={18} /> Import JSON Set
         </button>
+        <button 
+          className="button-base button-primary"
+          onClick={onCreateSet}
+        >
+          <Edit size={18} /> Create JSON Set
+        </button>
         {deferredPrompt && (
           <button 
             className="button-base button-primary"
@@ -163,10 +171,13 @@ export const DirectoryScreen: React.FC<Props> = ({ onSelectSet }) => {
                 <button className="action-btn export-btn" onClick={() => handleExport(set)} aria-label="Export">
                   <Download size={20} />
                 </button>
-                <button className="action-btn reset-btn" onClick={() => handleReset(set)} aria-label="Reset Progress">
+                <button className="action-btn reset-btn" onClick={() => handleReset(set)} aria-label="Reset Progress" title="Reset Progress">
                   <RotateCcw size={20} />
                 </button>
-                <button className="action-btn delete-btn" onClick={() => handleDelete(set.id)} aria-label="Delete">
+                <button className="action-btn edit-set-btn" onClick={() => onEditSet?.(set)} aria-label="Edit Set" title="Edit Question Set">
+                  <Edit size={20} />
+                </button>
+                <button className="action-btn delete-btn" onClick={() => handleDelete(set.id)} aria-label="Delete" title="Delete">
                   <Trash2 size={20} />
                 </button>
               </div>

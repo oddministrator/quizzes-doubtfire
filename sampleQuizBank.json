@@ -1,0 +1,245 @@
+{
+  "title": "Sample Bank of Questions",
+  "current_level": 2,
+  "advance_required_percent": 70,
+  "questions": [
+    {
+      "id": "sampleQ1",
+      "text": "The first sample question asks which is correct?",
+      "subject": "basics1",
+      "type": "single",
+      "answers": [
+        {
+          "id": "a1",
+          "text": "Not I.",
+          "isCorrect": false
+        },
+        {
+          "id": "a2",
+          "text": "Correct, I am.",
+          "isCorrect": true
+        },
+        {
+          "id": "a3",
+          "text": "Probably another one.",
+          "isCorrect": false
+        },
+        {
+          "id": "a4",
+          "text": "I'm wrong.",
+          "isCorrect": false
+        }
+      ],
+      "assigned_difficulty": 2,
+      "user_attempts": 0,
+      "correct_attempts": 0,
+      "current_attempt": "null"
+    },
+	{
+      "id": "sampleQ2",
+      "text": "The second sample question asks which is correct?",
+      "subject": "basics1",
+      "type": "single",
+      "answers": [
+        {
+          "id": "a1",
+          "text": "Not I.",
+          "isCorrect": false
+        },
+        {
+          "id": "a2",
+          "text": "Correct, I am.",
+          "isCorrect": true
+        },
+        {
+          "id": "a3",
+          "text": "Probably another one.",
+          "isCorrect": false
+        },
+        {
+          "id": "a4",
+          "text": "I'm wrong.",
+          "isCorrect": false
+        }
+      ],
+      "assigned_difficulty": 2,
+      "user_attempts": 0,
+      "correct_attempts": 0,
+      "current_attempt": "null"
+    },
+	{
+      "id": "sampleQ3",
+      "text": "The third sample question asks which is correct?",
+      "subject": "basics2",
+      "type": "single",
+      "answers": [
+        {
+          "id": "a1",
+          "text": "Not I.",
+          "isCorrect": false
+        },
+        {
+          "id": "a2",
+          "text": "Correct, I am.",
+          "isCorrect": true
+        },
+        {
+          "id": "a3",
+          "text": "Probably another one.",
+          "isCorrect": false
+        },
+        {
+          "id": "a4",
+          "text": "I'm wrong.",
+          "isCorrect": false
+        }
+      ],
+      "assigned_difficulty": 2,
+      "user_attempts": 0,
+      "correct_attempts": 0,
+      "current_attempt": "null"
+    },
+	{
+      "id": "sampleQ4",
+      "text": "The fourth sample question asks which is correct?",
+      "subject": "basics2",
+      "type": "single",
+      "answers": [
+        {
+          "id": "a1",
+          "text": "Not I.",
+          "isCorrect": false
+        },
+        {
+          "id": "a2",
+          "text": "Correct, I am.",
+          "isCorrect": true
+        },
+        {
+          "id": "a3",
+          "text": "Probably another one.",
+          "isCorrect": false
+        },
+        {
+          "id": "a4",
+          "text": "I'm wrong.",
+          "isCorrect": false
+        }
+      ],
+      "assigned_difficulty": 3,
+      "user_attempts": 0,
+      "correct_attempts": 0,
+      "current_attempt": "null"
+    },
+	{
+      "id": "sampleQ5",
+      "text": "The fifth sample question asks which is correct?",
+      "subject": "basics2",
+      "type": "single",
+      "answers": [
+        {
+          "id": "a1",
+          "text": "Not I.",
+          "isCorrect": false
+        },
+        {
+          "id": "a2",
+          "text": "Correct, I am.",
+          "isCorrect": true
+        },
+        {
+          "id": "a3",
+          "text": "Probably another one.",
+          "isCorrect": false
+        },
+        {
+          "id": "a4",
+          "text": "I'm wrong.",
+          "isCorrect": false
+        }
+      ],
+      "assigned_difficulty": 3,
+      "user_attempts": 0,
+      "correct_attempts": 0,
+      "current_attempt": "null"
+    },
+    {
+      "id": "sampleQ6",
+      "text": "Can this app support multiple correct answeres?",
+      "subject": "Doubtfire1",
+      "type": "multiple",
+      "answers": [
+        {
+          "id": "a1",
+          "text": "Of course.",
+          "isCorrect": true
+        },
+        {
+          "id": "a2",
+          "text": "Unpossible.",
+          "isCorrect": false
+        },
+        {
+          "id": "a3",
+          "text": "Nonsense!",
+          "isCorrect": false
+        },
+        {
+          "id": "a4",
+          "text": "Yes.",
+          "isCorrect": true
+        },
+        {
+          "id": "a5",
+          "text": "Don't select this incorrect answer unless you want to see the explanation feature (click the question mark next to Incorrect).",
+          "isCorrect": false
+        }
+      ],
+      "assigned_difficulty": 5,
+      "user_attempts": 0,
+      "correct_attempts": 0,
+      "current_attempt": "null",
+      "explanation": "This app can also support giving explanations when answered incorrectly."
+    },
+    {
+      "id": "sampleQ7",
+      "text": "Can this force answers to display in order instead of the default randomization?",
+      "subject": "Doubtfire1",
+      "type": "single",
+      "ordered": true,
+      "answers": [
+        {
+          "id": "a1",
+          "text": "Yes it can.",
+          "isCorrect": false
+        },
+        {
+          "id": "a2",
+          "text": "Of course it can.",
+          "isCorrect": false
+        },
+        {
+          "id": "a3",
+          "text": "You know it!",
+          "isCorrect": false
+        },
+        {
+          "id": "a4",
+          "text": "Yes.",
+          "isCorrect": false
+        },
+        {
+          "id": "a5",
+          "text": "All of the above (or, you know, all of the to the side and stuff if you're on a browser instead of a phone)",
+          "isCorrect": true
+        }
+      ],
+      "assigned_difficulty": 5,
+      "user_attempts": 0,
+      "correct_attempts": 0,
+      "current_attempt": "null",
+      "explanation": "Oh cool, you checked the question mark again for an explanation."
+    }
+  ],
+  "id": "set-1781067830237"
+}

@@ -104,6 +104,12 @@
   box-shadow: var(--shadow-glow);
 }
 
+.edit-set-btn:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #60a5fa;
+}
+
 .delete-btn:hover {
   background: var(--error-base);
   border-color: var(--error-base);
