@@ -164,3 +164,15 @@ p {
   width: auto;
   object-fit: contain;
 }
+
+@media (max-width: 640px) {
+  .return-link {
+    position: static;
+    margin: 16px auto 0;
+    justify-content: center;
+  }
+
+  .return-logo {
+    height: 38px;
+  }
+}

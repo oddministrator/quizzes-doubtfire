@@ -19,10 +19,43 @@ export const DirectoryScreen: React.FC<Props> = ({ onSelectSet, onCreateSet, onE
   const loadSets = async () => {
     setIsLoading(true);
     try {
-      const loadedSets = await OPFSService.getAllQuestionSets();
+      let loadedSets = await OPFSService.getAllQuestionSets();
+
+      // Auto-seed sample quiz bank on initial visit if library is empty
+      const hasSeeded = localStorage.getItem('sample-quiz-seeded');
+      if (loadedSets.length === 0 && !hasSeeded) {
+        try {
+          const res = await fetch(`${import.meta.env.BASE_URL}sampleQuizBank.json`);
+          if (res.ok) {
+            const sampleSet: QuestionSet = await res.json();
+            await OPFSService.saveQuestionSet(sampleSet);
+            localStorage.setItem('sample-quiz-seeded', 'true');
+            loadedSets = await OPFSService.getAllQuestionSets();
+          }
+        } catch (fetchErr) {
+          console.warn('Could not auto-seed sample quiz bank:', fetchErr);
+        }
+      }
+
       setSets(loadedSets);
     } catch (e) {
       console.error(e);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleLoadSample = async () => {
+    setIsLoading(true);
+    try {
+      const res = await fetch(`${import.meta.env.BASE_URL}sampleQuizBank.json`);
+      if (res.ok) {
+        const sampleSet: QuestionSet = await res.json();
+        await OPFSService.saveQuestionSet(sampleSet);
+        await loadSets();
+      }
+    } catch (err) {
+      console.error('Failed to load sample set:', err);
     } finally {
       setIsLoading(false);
     }
@@ -155,7 +188,14 @@ export const DirectoryScreen: React.FC<Props> = ({ onSelectSet, onCreateSet, onE
         ) : sets.length === 0 ? (
           <div className="empty-state glass-panel">
             <p>No question sets found.</p>
-            <p>Import a JSON file to get started!</p>
+            <p>Import a JSON file, create one, or load the sample set!</p>
+            <button 
+              className="button-base button-primary"
+              style={{ marginTop: '16px' }}
+              onClick={handleLoadSample}
+            >
+              Load Sample Quiz Bank
+            </button>
           </div>
         ) : (
           sets.map((set: QuestionSet) => (

@@ -10,11 +10,15 @@ function App() {
   const [isCreatingSet, setIsCreatingSet] = useState(false);
   const [editingSet, setEditingSet] = useState<QuestionSet | null>(null);
 
+  const isHome = !activeSet && !isCreatingSet && !editingSet;
+
   return (
     <>
-      <a href="https://radiological.info" className="return-link" title="Return to radiological.info">
-        <img src={fullLogo} alt="Radiological Info Logo" className="return-logo" />
-      </a>
+      {isHome && (
+        <a href="https://radiological.info" className="return-link" title="Return to radiological.info">
+          <img src={fullLogo} alt="Radiological Info Logo" className="return-logo" />
+        </a>
+      )}
       {activeSet ? (
         <QuizScreen 
           set={activeSet} 
