@@ -241,3 +241,69 @@
   50% { opacity: 1; }
   100% { opacity: 0.5; }
 }
+
+/* Cheater Button Styling */
+.cheater-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-family: var(--font-main);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cheater-btn:hover {
+  background: var(--bg-surface-hover);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.cheater-btn.active {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: var(--success-base);
+  color: var(--success-base);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+.cheater-btn.active:hover {
+  background: rgba(16, 185, 129, 0.25);
+  color: #10b981;
+}
+
+.cheater-btn-text {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .cheater-btn-text {
+    display: inline;
+  }
+}
+
+/* Cheater Answer Highlight Styling */
+.answer-btn.cheater-highlight {
+  background: var(--success-surface);
+  border-color: var(--success-base);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+.answer-btn.cheater-highlight:not(.is-disabled):hover {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: var(--success-base);
+  transform: translateY(-2px);
+}
+
+.answer-btn.cheater-highlight.selected {
+  border-color: var(--accent-primary);
+  background: rgba(16, 185, 129, 0.25);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3), 0 0 15px rgba(16, 185, 129, 0.2);
+}
+

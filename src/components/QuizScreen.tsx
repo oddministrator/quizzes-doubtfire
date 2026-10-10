@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { QuestionSet, Question, Answer } from '../types';
 import { OPFSService } from '../services/opfs';
-import { ChevronLeft, Check, X, HelpCircle } from 'lucide-react';
+import { ChevronLeft, Check, X, HelpCircle, Eye, EyeOff } from 'lucide-react';
 import './QuizScreen.css';
 
 interface Props {
@@ -58,6 +58,19 @@ export const QuizScreen: React.FC<Props> = ({ set: initialSet, onExit }) => {
     const q = pickNextQuestion(initialSet);
     return q ? q.id : null;
   });
+  const [isCheaterMode, setIsCheaterMode] = useState<boolean>(() => {
+    const saved = localStorage.getItem('cheater-mode');
+    return saved === 'true';
+  });
+
+  const toggleCheaterMode = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsCheaterMode(prev => {
+      const next = !prev;
+      localStorage.setItem('cheater-mode', String(next));
+      return next;
+    });
+  };
 
   const currentQuestion = set.questions.find(q => q.id === activeQuestionId);
 
@@ -240,6 +253,15 @@ export const QuizScreen: React.FC<Props> = ({ set: initialSet, onExit }) => {
         <div className="progress">
           Level {currentLevelDisp} • {currentLevelRemaining} remaining
         </div>
+        <button 
+          className={`cheater-btn ${isCheaterMode ? 'active' : ''}`}
+          onClick={toggleCheaterMode}
+          title="Toggle Cheater Mode"
+          aria-label="Toggle Cheater Mode"
+        >
+          {isCheaterMode ? <Eye size={20} /> : <EyeOff size={20} />}
+          <span className="cheater-btn-text">Cheater</span>
+        </button>
       </header>
 
       <main className="quiz-main">
@@ -263,8 +285,13 @@ export const QuizScreen: React.FC<Props> = ({ set: initialSet, onExit }) => {
               if (answer.isCorrect) btnClass += ' correct';
               else if (isSelected) btnClass += ' incorrect';
               else btnClass += ' dim';
-            } else if (isSelected) {
-              btnClass += ' selected';
+            } else {
+              if (isSelected) {
+                btnClass += ' selected';
+              }
+              if (isCheaterMode && answer.isCorrect) {
+                btnClass += ' cheater-highlight';
+              }
             }
 
             return (
